@@ -1,0 +1,115 @@
+{
+    "onibus_urbano": {
+      "valor": 3.80,
+      "linhas": [
+        {
+          "codigo": "L3",
+          "nome": "ARAPONGAL",
+          "dias": {
+            "segunda_a_sexta": {
+              "ida": {
+                "L31": {
+                  "saida": "Movep",
+                  "horarios": ["06:55","07:55","08:00","08:55","09:55","10:55","11:55","12:55","14:55","16:10","17:15","18:15","19:30","21:40","22:40","23:00"],
+                  "itinerario": ["Rua João Batista Poci Junior","Rua Gersoni Napoli","Rua Cel. Jeremias Muniz","Rua Cap. João Pocci","Rua Celso Xavier","Rua Jose Antonio de Campos (Banco do Brasil)","Pista Marginal Norte","BR 116","Arapongal"]
+                }
+              },
+              "volta": {
+                "L32": {
+                  "saida": "Arapongal",
+                  "horarios": ["06:20","07:15","07:30","07:35","08:30","08:35","09:35","10:35","11:35","12:55","13:35","15:35","16:40","17:45","18:45","20:10","22:10"],
+                  "itinerario": ["Arapongal","Rodoviária","Rua José Antonio de Campos","Av. Jonas Banks Leite","Rua Joaquim Marques Alves","Rua João Batista Poci Junior"]
+                }
+              }
+            },
+            "sabado": {
+              "ida": {
+                "L31": {
+                  "saida": "Movep",
+                  "horarios": ["06:55","07:50","07:55","08:55","10:55","11:55","12:55","14:55","16:10","17:15","18:15","19:30","21:40","23:00"]
+                }
+              },
+              "volta": {
+                "L32": {
+                  "saida": "Arapongal",
+                  "horarios": ["06:20","07:35","08:35","09:35","11:35","12:35","13:35","15:35","16:40","17:45","18:45","20:10","22:10"]
+                }
+              }
+            },
+            "domingo_feriado": {
+              "ida": {
+                "L31": {
+                  "saida": "Movep",
+                  "horarios": ["07:00","08:55","10:55","11:55","14:55","17:00","21:10"]
+                }
+              },
+              "volta": {
+                "L32": {
+                  "saida": "Arapongal",
+                  "horarios": ["06:20","07:35","09:25","11:30","12:35","15:25","17:30"]
+                }
+              }
+            }
+          }
+        },
+        {
+          "codigo": "L4",
+          "nome": "PAULISTANO",
+          "dias": {
+            "segunda_a_sexta": {
+              "ida": {
+                "L41": {
+                  "saida": "Movep",
+                  "horarios": ["07:00","08:00","09:00","10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00","19:15","21:40","23:00"]
+                }
+              },
+              "volta": {
+                "L42": {
+                  "saida": "Jardim Paulistano",
+                  "horarios": ["06:10","07:30","08:30","09:30","10:30","11:30","12:30","13:30","14:30","15:30","16:30","17:30","18:30","19:45","22:30"]
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "onibus_rural": {
+      "valor": 5.10,
+      "linhas": [
+        {
+          "codigo": "R2",
+          "nome": "CAPINZAL/INDAIATUBA",
+          "dias": {
+            "segunda_a_sexta": {
+              "ida": {
+                "R21": {
+                  "saida": "Rodoviária",
+                  "horarios": ["05:00","11:10","17:10"]
+                }
+              },
+              "volta": {
+                "R22": {
+                  "saida": "Capinzal",
+                  "horarios": ["06:45","12:30","18:00"]
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "onibus_universitario": {
+      "linhas": [
+        {"codigo":"U31","saida":"Arapongal","destino":"Faculdade","horario":"18:45"},
+        {"codigo":"U32","saida":"Faculdade","destino":"Arapongal","horario":"22:40"},
+        {"codigo":"U71","saida":"Xangrilá","destino":"Faculdade","horario":"18:45"},
+        {"codigo":"U52","saida":"Faculdade","destino":"Xangrilá","horario":"22:40"},
+        {"codigo":"U61","saida":"Agrochá","destino":"Faculdade","horario":"19:00"},
+        {"codigo":"U62","saida":"Faculdade","destino":"Agrochá","horario":"22:30"},
+        {"codigo":"U81","saida":"Serrote","destino":"Faculdade","horario":"18:40"},
+        {"codigo":"U82","saida":"Faculdade","destino":"Serrote / Arapongal","horario":"22:40"}
+      ]
+    }
+  }
+  
