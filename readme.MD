@@ -1,4 +1,4 @@
-# API de Horários de Ônibus - Registro/SP
+# API Publica de - Registro/SP
 
 Uma API simples em **Node.js** que fornece os horários de ônibus urbanos da cidade de Registro/SP. Ideal para integrar em sites, apps ou sistemas de transporte público.
 

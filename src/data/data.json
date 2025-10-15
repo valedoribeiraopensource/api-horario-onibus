@@ -1,115 +1,400 @@
 {
-    "onibus_urbano": {
-      "valor": 3.80,
-      "linhas": [
+  "onibus_urbano": [
+    {
+      "linha": "L3",
+      "nome": "Arapongal",
+      "sentidos": [
         {
-          "codigo": "L3",
-          "nome": "ARAPONGAL",
+          "codigo": "L31",
+          "origem": "Movep (Centro)",
+          "destino": "Arapongal (Bairro)",
           "dias": {
-            "segunda_a_sexta": {
-              "ida": {
-                "L31": {
-                  "saida": "Movep",
-                  "horarios": ["06:55","07:55","08:00","08:55","09:55","10:55","11:55","12:55","14:55","16:10","17:15","18:15","19:30","21:40","22:40","23:00"],
-                  "itinerario": ["Rua João Batista Poci Junior","Rua Gersoni Napoli","Rua Cel. Jeremias Muniz","Rua Cap. João Pocci","Rua Celso Xavier","Rua Jose Antonio de Campos (Banco do Brasil)","Pista Marginal Norte","BR 116","Arapongal"]
-                }
-              },
-              "volta": {
-                "L32": {
-                  "saida": "Arapongal",
-                  "horarios": ["06:20","07:15","07:30","07:35","08:30","08:35","09:35","10:35","11:35","12:55","13:35","15:35","16:40","17:45","18:45","20:10","22:10"],
-                  "itinerario": ["Arapongal","Rodoviária","Rua José Antonio de Campos","Av. Jonas Banks Leite","Rua Joaquim Marques Alves","Rua João Batista Poci Junior"]
-                }
-              }
-            },
-            "sabado": {
-              "ida": {
-                "L31": {
-                  "saida": "Movep",
-                  "horarios": ["06:55","07:50","07:55","08:55","10:55","11:55","12:55","14:55","16:10","17:15","18:15","19:30","21:40","23:00"]
-                }
-              },
-              "volta": {
-                "L32": {
-                  "saida": "Arapongal",
-                  "horarios": ["06:20","07:35","08:35","09:35","11:35","12:35","13:35","15:35","16:40","17:45","18:45","20:10","22:10"]
-                }
-              }
-            },
-            "domingo_feriado": {
-              "ida": {
-                "L31": {
-                  "saida": "Movep",
-                  "horarios": ["07:00","08:55","10:55","11:55","14:55","17:00","21:10"]
-                }
-              },
-              "volta": {
-                "L32": {
-                  "saida": "Arapongal",
-                  "horarios": ["06:20","07:35","09:25","11:30","12:35","15:25","17:30"]
-                }
-              }
-            }
-          }
+            "segunda_a_sexta": ["06h55","07h55 (extra)","08h00","08h55","09h55","10h55","11h55","12h55","14h55","16h10","17h15","18h15","19h30","21h40","22h40","23h00"],
+            "sabado": ["06h55","07h50","07h55","08h55","10h55","11h55","12h55","14h55","16h10","17h15","18h15","19h30","21h40","23h00"],
+            "domingo_feriado": ["07h00","08h55","10h55","11h55","14h55","17h00","21h10"]
+          },
+          "itinerario": "Rua João Batista Poci Junior - Rua Gersoni Napoli - Rua Cel. Jeremias Muniz - Rua Cap. João Pocci - Rua Celso Xavier - Rua Jose Antonio de Campos (Banco do Brasil) - Pista Marginal Norte - BR 116 – Arapongal"
         },
         {
-          "codigo": "L4",
-          "nome": "PAULISTANO",
+          "codigo": "L32",
+          "origem": "Arapongal (Bairro)",
+          "destino": "Centro",
           "dias": {
-            "segunda_a_sexta": {
-              "ida": {
-                "L41": {
-                  "saida": "Movep",
-                  "horarios": ["07:00","08:00","09:00","10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00","19:15","21:40","23:00"]
-                }
-              },
-              "volta": {
-                "L42": {
-                  "saida": "Jardim Paulistano",
-                  "horarios": ["06:10","07:30","08:30","09:30","10:30","11:30","12:30","13:30","14:30","15:30","16:30","17:30","18:30","19:45","22:30"]
-                }
-              }
-            }
-          }
+            "segunda_a_sexta": ["06h20","07h15 (extra Via Castelinho)","07h30 (Direto)","07h35","08h30","08h35","09h35","10h35","11h35","12h55","13h35","15h35","16h40","17h45","18h45","20:10","22h10"],
+            "sabado": ["06h20","07h35","08h35","09h35","11h35","12h35","13h35","15h35","16h40","17h45","18h45","20:10","22h10"],
+            "domingo_feriado": ["06h20","07h35","09h25","11h30","12h35","15h25","17h30"]
+          },
+          "itinerario": "Arapongal - Rodoviária - Rua José Antonio de Campos - Av. Jonas Banks Leite - Rua Joaquim Marques Alves - Rua João Batista Poci Junior"
         }
       ]
     },
-    "onibus_rural": {
-      "valor": 5.10,
-      "linhas": [
+    {
+      "linha": "L4",
+      "nome": "Paulistano",
+      "sentidos": [
         {
-          "codigo": "R2",
-          "nome": "CAPINZAL/INDAIATUBA",
+          "codigo": "L41",
+          "origem": "Movep (Centro)",
+          "destino": "Jardim Paulistano (Bairro)",
           "dias": {
-            "segunda_a_sexta": {
-              "ida": {
-                "R21": {
-                  "saida": "Rodoviária",
-                  "horarios": ["05:00","11:10","17:10"]
-                }
-              },
-              "volta": {
-                "R22": {
-                  "saida": "Capinzal",
-                  "horarios": ["06:45","12:30","18:00"]
-                }
-              }
-            }
-          }
+            "segunda_a_sexta": ["07H00","08H00","09H00","10H00","11H00","12H00","13H00","14H00","15H00","16H00","17H00","18H00","19H15","21H40","23H00 (VIA JARDIM SÃO PAULO)"],
+            "sabado": ["07H00","08H00","09H00","10H00","11H00","12H00","13H00","14H00","15H00","16H00","17H00","18H00","19H15","21H40","23H00 (VIA JARDIM SÃO PAULO)"],
+            "domingo_feriado": ["09H00","12H00","15H00","17H00","21H10"]
+          },
+          "itinerario": "Rua João Batista Poci Junior - Rua Gersoni Napoli - Rua Cel. Jeremias Muniz - Rua Cap. João Pocci - Rua Celso Xavier - Rua Jose Antônio de Campos (Banco do Brasil) - Av. H. Matsuzawa (Vila Ribeirópolis) - Rua Peru - Av. Dep. Ulisses Guimarães - Nosso Teto - Estrada Municipal do Bamburral – Rua Vivaldo Pereira – Av. Seis – Av. Geraldo Costi - Estrada Municipal do Bamburral (frente ao Jardim São Paulo / Jardim Paraná) - Jardim Virginia - Jardim Paulistano – Bamburral (Bar do Lico)"
+        },
+        {
+          "codigo": "L42",
+          "origem": "Jardim Paulistano (Bairro)",
+          "destino": "Centro",
+          "dias": {
+            "segunda_a_sexta": ["06H10","07H30","08H30","09H30","10H30","11H30","12H30","13H30","14H30","15H30","16H30","17H30","18H30","19H45","22H30"],
+            "sabado": ["06H30","07H30","08H30","09H30","10H30","11H30","13H30","15H30","16H30","17H30","18H30","19H45","22H10"],
+            "domingo_feriado": ["06H20","09H30","12H30","15H30","17H40 (VIA JARDIM SÃO PAULO)"]
+          },
+          "itinerario": "Jardim Paulistano - Estrada Municipal do Bamburral (frente ao Jardim São Paulo / Jardim Paraná) - Nosso Teto - Av. Dep. Ulisses Guimarães – Rua Antônio Franco de Oliveira Canto (Jardim América) - Av. H. Matsuzawa (Vila Ribeirópolis) - Rua Jose Antônio de Campos – Av. Pref. Jonas Banks Leite – Rua Joaquim Marques Alves – Rua João Batista Poci Junior (Movep)"
         }
       ]
     },
-    "onibus_universitario": {
-      "linhas": [
-        {"codigo":"U31","saida":"Arapongal","destino":"Faculdade","horario":"18:45"},
-        {"codigo":"U32","saida":"Faculdade","destino":"Arapongal","horario":"22:40"},
-        {"codigo":"U71","saida":"Xangrilá","destino":"Faculdade","horario":"18:45"},
-        {"codigo":"U52","saida":"Faculdade","destino":"Xangrilá","horario":"22:40"},
-        {"codigo":"U61","saida":"Agrochá","destino":"Faculdade","horario":"19:00"},
-        {"codigo":"U62","saida":"Faculdade","destino":"Agrochá","horario":"22:30"},
-        {"codigo":"U81","saida":"Serrote","destino":"Faculdade","horario":"18:40"},
-        {"codigo":"U82","saida":"Faculdade","destino":"Serrote / Arapongal","horario":"22:40"}
+    {
+      "linha": "L5",
+      "nome": "Faculdade",
+      "sentidos": [
+        {
+          "codigo": "L51",
+          "origem": "Fundação Bradesco (Centro)",
+          "destino": "Bairro",
+          "dias": {
+            "segunda_a_sexta": ["06H30","07H00","09H30","12H00","15H00","17H00"],
+            "sabado": ["07H00","09H30","12H00","15H00","17H00"],
+            "domingo_feriado": ["07H00","12H00","17H00"]
+          },
+          "itinerario": "Fundação Bradesco – Rua Joaquim Marques Alves - Rua João Batista Poci Junior - Rua Gersoni Napoli - Rua Cel. Jeremias Muniz - Rua Cap. João Pocci - Rua Celso Xavier - Rua Jose Antônio de Campos (Banco do Brasil) - Av. H. Matsuzawa (Vila Ribeirópolis) - Rua Peru - Av. Dep. Ulisses Guimarães - Nosso Teto – (frente ao C. H. Alzira Pacheco L. K. (D1) e C. H. Eiji Matsumura (D2)) – Jardim das Palmeiras"
+        },
+        {
+          "codigo": "L52",
+          "origem": "Faculdade (Bairro)",
+          "destino": "Centro",
+          "dias": {
+            "segunda_a_sexta": ["06H10","07H00","07H50","10H20","12H50","16H00","17H50"],
+            "sabado": ["06H10","07H50","10H20","12H50","16H00","17H50"],
+            "domingo_feriado": ["06H10","12H50","17H50"]
+          },
+          "itinerario": "Jardim das Palmeiras – C. H. Eiji Matsumura (D2) - C. H. Alzira Pacheco L. K. (D1) - Nosso Teto - Av. Dep. Ulisses Guimarães – Rua Antônio Franco de Oliveira Canto (Jardim América) - Av. H. Matsuzawa (Vila Ribeirópolis) - Rua Jose Antônio de Campos – Av. Pref. Jonas Banks Leite – Rua Joaquim Marques Alves – Fundação Bradesco"
+        }
+      ]
+    },
+    {
+      "linha": "L6",
+      "nome": "Agrochá / Vila Romão",
+      "sentidos": [
+        {
+          "codigo": "L61",
+          "origem": "Rodoviária (Centro)",
+          "destino": "Bairro",
+          "dias": {
+            "segunda_a_sexta": ["06H30","07H20","07H50","08H40","10H00","11H20","12H40","14H00","15H20","16H40","17H00","18H00","19H40"],
+            "sabado": ["06H40","08H00","09H20","10H40","12H10","14H20","15H40","17H00","18H20","19H40","21H40","23H00"],
+            "domingo_feriado": ["08H40","12H10","14H20","17H00","21H10"]
+          },
+          "itinerario": "Via BR / Via Vila Romão"
+        },
+        {
+          "codigo": "L62",
+          "origem": "Agrochá (Bairro)",
+          "destino": "Centro",
+          "dias": {
+            "segunda_a_sexta": ["05H50","06H40","07H10","08H00","08H30","09H20","10H40","12H00","12H50","13H20","14H40","16H00","17H20","17H40","20H20"],
+            "sabado": ["06H00","07H20","08H40","10H00","11H20","12H50","15H00","16H20","17H40","19H00","20H20","22H20"],
+            "domingo_feriado": ["06H20","09H20","12H50","15H00","17H40"]
+          },
+          "itinerario": "Via BR / Via Vila Romão"
+        }
+      ]
+    },
+    {
+      "linha": "L7 - XANGRILÁ",
+      "dias": {
+        "segunda_a_sexta": {
+          "L71": {
+            "saida": "Fundação Bradesco (Centro / Bairro)",
+            "horarios": ["06:45","07:55","09:00","10:10","11:50","13:00","14:45","15:50","17:05","18:05","19:30","21:20","23:00"],
+            "itinerario": "Rua João Batista Poci Junior - Rua Gersoni Napoli - Rua Cel. Jeremias Muniz - Rua Cap. João Pocci - Rua Celso Xavier - Rua Jose Antônio de Campos (Banco do Brasil) – Av. Clara Gianotti de Souza (Centro / Jardim Caiçara I) – Av. Cecy Teixeira de Melo Almada - Jardim Xangrilá",
+            "observacoes": "Faculdade – Jardim Xangrilá (22h40): Faculdade – Jardim das Palmeiras – Nosso Teto – Jardim América – Vila Ribeirópolis – Rodoviária – Centro – Fundação Bradesco – 23h"
+          },
+          "L72": {
+            "saida": "Jardim Xangrilá (Bairro / Centro)",
+            "horarios": ["06:05","07:15","08:25","09:30","10:40","12:20","13:30","14:45","16:20","17:35","18:35","20:00","21:50"],
+            "itinerario": "Jardim Xangrilá – Jardim Ipanema – Jardim San Conrado – Jardim Caiçara II – Jardim São Matheus – Jardim Caiçara I – Av. Clara Gianotti de Souza - Rua Jose Antônio de Campos – Av. Pref. Jonas Banks Leite – Rua Joaquim Marques Alves – Fundação Bradesco",
+            "observacoes": "Jardim Xangrilá – Faculdade (18h45): Jardim Xangrilá - Jardim Ipanema – Jardim San Conrado – Jardim Caiçara II – Jardim São Matheus – Jardim Caiçara I – Centro – Prefeitura – Vila Ribeirópolis – Jardim América – Nosso Teto - C. H. Alzira Pacheco L. K. (D1) – C. H. Eiji Matsumura (D2) – Jardim das Palmeiras – Rodoviária – Retorno ao Centro"
+          }
+        },
+        "sabado": {
+          "L71": {
+            "saida": "Fundação Bradesco (Centro / Bairro)",
+            "horarios": ["06:45","07:55","09:00","11:50","13:00","15:50","17:05","18:05","19:30","21:40","23:00"]
+          },
+          "L72": {
+            "saida": "Jardim Xangrilá (Bairro / Centro)",
+            "horarios": ["06:05","07:15","08:25","09:30","12:30","13:30","16:20","17:35","18:35","22:10"]
+          }
+        },
+        "domingo_feriado": {
+          "L71": {
+            "saida": "Fundação Bradesco (Centro / Bairro)",
+            "horarios": ["09:00","11:50","15:50","17:05","19:00","21:10"]
+          },
+          "L72": {
+            "saida": "Jardim Xangrilá (Bairro / Centro)",
+            "horarios": ["06:20","09:30","12:20","16:20","17:40","19:30"]
+          }
+        }
+      }
+    },
+    {
+      "linha": "L8 - SERROTE",
+      "dias": {
+        "segunda_a_sexta": {
+          "L81": {
+            "saida": "Movep (Centro / Bairro)",
+            "horarios": ["05:50","06:50","08:00","09:00","10:00","11:00","12:15","14:00","15:15","16:10","17:10","18:10","19:30","21:20","23:00"],
+            "itinerario": "Rua João Batista Poci Junior - Rua Gersoni Napoli - Rua Cel. Jeremias Muniz - Rua Cap. João Pocci - Rua Celso Xavier - Rua Jose Antônio de Campos (Banco do Brasil) – Pista Marginal Norte – BR116 (Arapongal) - Serrote",
+            "observacoes": "Faculdade – Serrote (22h40): Faculdade – BR116 - Centro – Movep – Serrote"
+          },
+          "L82": {
+            "saida": "Serrote (Bairro / Centro)",
+            "horarios": ["06:20","07:20","08:30","09:30","10:30","11:30","12:45","14:30","15:45","16:40","17:40","18:40","20:00","21:50"],
+            "itinerario": "Serrote – BR116 (Arapongal) – Rodoviária – Rua José Antônio de Campos – Av. Pref. Jonas Banks Leite – Rua Joaquim Marques Alves – Rua João Batista Poci Junior (Movep)",
+            "observacoes": "Serrote – Faculdade (18h40): Serrote – Rodoviária - Vila Ribeirópolis – Jardim América – Nosso Teto - C. H. Alzira Pacheco L. K. (D1) – C. H. Eiji Matsumura (D2) – Jardim das Palmeiras – Rodoviária – Retorno ao Centro"
+          }
+        },
+        "sabado": {
+          "L81": {
+            "saida": "Movep (Centro / Bairro)",
+            "horarios": ["05:50","06:50","08:00","09:00","11:00","12:15","15:15","17:15","18:15","19:30","21:40","23:00"]
+          },
+          "L82": {
+            "saida": "Serrote (Bairro / Centro)",
+            "horarios": ["06:20","07:20","08:30","09:30","11:30","12:45","15:45","17:45","20:00","22:10"]
+          }
+        },
+        "domingo_feriado": {
+          "L81": {
+            "saida": "Movep (Centro / Bairro)",
+            "horarios": ["08:00","12:15","15:15","17:00","21:10"]
+          },
+          "L82": {
+            "saida": "Serrote (Bairro / Centro)",
+            "horarios": ["06:20","08:30","12:45","15:45","17:40"]
+          }
+        }
+      }
+    },
+    {
+      "linha": "L9 - JARDIM SÃO PAULO",
+      "dias": {
+        "segunda_a_sexta": {
+          "L91": {
+            "saida": "Fundação Bradesco (Centro / Bairro)",
+            "horarios": ["06:40","07:40","08:40","10:40","12:40","14:40","15:40","16:40","17:40","18:40","21:40","23:00"],
+            "itinerario": "Rua João Batista Poci Junior - Rua Gersoni Napoli - Rua Cel. Jeremias Muniz - Rua Cap. João Pocci - Rua Celso Xavier - Rua Jose Antônio de Campos (Banco do Brasil) - Av. H. Matsuzawa (Vila Ribeirópolis) - Rua Peru - Av. Dep. Ulisses Guimarães - Nosso Teto - Estrada Municipal do Bamburral – Rua Vivaldo Pereira – Av. Doze – Av. Prof. Marival de Oliveira – Av. Seis – Av. Geraldo Costi - Estrada Municipal do Bamburral - Jardim São Paulo"
+          },
+          "L92": {
+            "saida": "Jardim São Paulo (Bairro / Centro)",
+            "horarios": ["06:10","07:10","08:10","09:10","11:10","13:10","15:10","16:10","17:10","18:10","22:20"],
+            "itinerario": "Jardim São Paulo - Estrada Municipal do Bamburral - Nosso Teto - Av. Dep. Ulisses Guimarães – Rua Antônio Franco de Oliveira Canto (Jardim América) - Av. H. Matsuzawa (Vila Ribeirópolis) - Rua Jose Antônio de Campos – Av. Pref. Jonas Banks Leite – Rua Joaquim Marques Alves – Fundação Bradesco"
+          }
+        },
+        "sabado": {
+          "L91": {
+            "saida": "Fundação Bradesco (Centro / Bairro)",
+            "horarios": ["06:40","07:40","09:40","10:40","12:40","14:40","17:40","18:40"]
+          },
+          "L92": {
+            "saida": "Jardim São Paulo (Bairro / Centro)",
+            "horarios": ["06:20","09:10","12:10","15:10","18:10","19:10"]
+          }
+        },
+        "domingo_feriado": {
+          "L91": {
+            "saida": "Fundação Bradesco (Centro / Bairro)",
+            "horarios": ["08:40","11:40","14:40","17:40","21:10"]
+          },
+          "L92": {
+            "saida": "Jardim São Paulo (Bairro / Centro)",
+            "horarios": ["08:40","11:40","14:40","17:40","21:10"]
+          }
+        }
+      }
+    }
+  ],
+  "onibus_rural": [
+    {
+      "linha": "R2",
+      "nome": "Capinzal / Indaiatuba",
+      "sentidos": [
+        {
+          "codigo": "R21",
+          "origem": "Rodoviária (Centro)",
+          "destino": "Capinzal (Bairro)",
+          "dias": {
+            "segunda_a_sexta": ["05H00","11H10","17H10"],
+            "sabado": ["07H00","11H10","16H00"],
+            "domingo_feriado": ["07H00","14H00"]
+          },
+          "itinerario": "Rodoviária – Av. Marginal Castelo Branco – Rua Jose Antônio de Campos – Av. Pref. Jonas Banks Leite – Rua Joaquim Marques Alves (Movep) – Rua João Batista Poci Junior – Rua Gersoni Napoli – Rua Shitiro Maeji – Rua Cel. Antonio Jeremias Muniz – Rua Pres. Getulio Vargas – Rua Celso Xavier – Rua José Antônio de Campos – Av. Clara Gianotti de Souza – Av. Wild José de Souza – Av. Marginal Castelo Branco – BR116 S – Saída 454 – Estr. Municipal RGT-352 – Unidade de Saúde Familiar – Estrada sentido Tezuka virando a esquerda sentido Ocelina – Escola Municipal do Capinzal – retorna pela RGT 352 entrando a direita até o ponto final da estrada da Cheia Grande – retornando a RGT 352 seguindo até o acesso da estrada do Indaiatuba – Indaiatuba"
+        },
+        {
+          "codigo": "R22",
+          "origem": "Capinzal (Bairro)",
+          "destino": "Centro",
+          "dias": {
+            "segunda_a_sexta": ["06H45","12H30","18H00"],
+            "sabado": ["08H10","12H10","17H10"],
+            "domingo_feriado": ["08H10","15H10"]
+          },
+          "itinerario": "Indaiatuba - Unidade de Saúde Familiar - Estr. Municipal RGT-352 – BR116 S – Retorno (Km 455) – BR116 N – Saída 448 – Av. Marginal – Rua Felix Aby Azar – Rua Filomena Aby Azar – Rodoviária – Av. Marginal Castelo Branco – Rua José Antonio de Campos – Av. Jonas Banks Leite – Rua Joaquim Marques Alves (Movep)"
+        }
+      ]
+    },
+    {
+      "linha": "R3",
+      "nome": "Votupoca / Bulha",
+      "sentidos": [
+        {
+          "codigo": "R31",
+          "origem": "Rodoviária (Centro / Bairro)",
+          "destino": "Votupoca / Bulha (Bairro)",
+          "dias": {
+            "segunda_a_sexta": ["05H00","11H00","17H10"],
+            "sabado": ["07H00","11H10","16H00"],
+            "domingo_feriado": ["07H00","14H00"]
+          },
+          "itinerario": "Rodoviária – Av. Marginal Castelo Branco – Rua Jose Antônio de Campos – Av. Pref. Jonas Banks Leite – Rua Joaquim Marques Alves (Movep) – Rua João Batista Poci Junior – Rua Gersoni Napoli – Rua Shitiro Maeji – Rua Cel. Antonio Jeremias Muniz – Rua Pres. Getulio Vargas – Rua Celso Xavier – Rua José Antônio de Campos – Av. Clara Gianotti de Souza – Av. Wild José de Souza – Av. Marginal Castelo Branco – BR116 S – Saída 449 – Estr. Municipal RGT-265 – UNESP – IFSP – Agrochá – Taquaruçu – via Aécio – Votupoca – Estr. Municipal RGT-265 – Areado (Bulha)"
+        },
+        {
+          "codigo": "R32",
+          "origem": "Votupoca / Bulha (Bairro)",
+          "destino": "Rodoviária (Centro / Bairro)",
+          "dias": {
+            "segunda_a_sexta": ["06H10","12H20","18H20"],
+            "sabado": ["08H10","12H20","17H10"],
+            "domingo_feriado": ["08H10","15H10"]
+          },
+          "itinerario": "Areado (Bulha) – Estr. Municipal RGT-265 – Taquaruçu – Agrochá – IFSP – UNESP – BR116 N – Saída 448 – Av. Marginal - Rua Felix Aby Azar – Rua Filomena Aby Azar – Rodoviária – Av. Marginal Castelo Branco – Rua José Antonio de Campos – Av. Jonas Banks Leite – Rua Joaquim Marques Alves (Movep)"
+        }
+      ]
+    },
+    {
+      "linha": "R4",
+      "nome": "Guaviruva / Peropava",
+      "sentidos": [
+        {
+          "codigo": "R41",
+          "origem": "Rodoviária (Centro / Bairro)",
+          "destino": "Peropava (Bairro)",
+          "dias": {
+            "segunda_a_sexta": ["05H00","11H10","17H00"],
+            "sabado": ["07H00","11H10","16H00"],
+            "domingo_feriado": ["07H00","14H00"]
+          },
+          "itinerario": "Rodoviária – Av. Marginal Castelo Branco – Rua Jose Antonio de Campos – Rua Sinfronio Costa – Rua Capitão João Poci – Rua Tamekichi Takano – Rua Sinfronio Costa – Rua José Antonio de Campos – Av. Marginal – BR116 N – Saída 430 – Rua Shoey Nakazawa – Estr. Mun. RGT 150 – Bairro Peropava (ou conforme horário das 11h e 17h via Viaduto do Arapongal – BR116 S – Estr. Municipal RGT-030 – Jurumirim – Guaviruva - Peroupava)"
+        },
+        {
+          "codigo": "R42",
+          "origem": "Peropava (Bairro)",
+          "destino": "Rodoviária (Centro / Bairro)",
+          "dias": {
+            "segunda_a_sexta": ["06H30","12H40","18H30"],
+            "sabado": ["08H30","12H40","17H30"],
+            "domingo_feriado": ["08H30","15H30"]
+          },
+          "itinerario": "Peroupava – Guaviruva – Estr. Municipal RGT-150 – Estr. Municipal RGT-030 / Rua Shoey Nakazawa – Serrote – BR116 S – Av. Marginal Castelo Branco – Rodoviária – Av. Marginal Castelo Branco – Rua José Antonio de Campos – Av. Pref. Jonas Banks Leite – Rua Joaquim Marques Alves – Rua João Batista Pocci Junior (Movep)"
+        }
+      ]
+    },
+    {
+      "linha": "R5",
+      "nome": "Ribeirão Branco / Lageado",
+      "sentidos": [
+        {
+          "codigo": "R51",
+          "origem": "Rodoviária (Centro / Bairro)",
+          "destino": "Ribeirão Branco / Lageado (Bairro)",
+          "dias": {
+            "terca_quarta_sexta": ["06H20","11H50","16H50"]
+          },
+          "itinerario": "Rodoviária – Centro / Bairro"
+        },
+        {
+          "codigo": "R52",
+          "origem": "Ribeirão Branco / Lageado (Bairro)",
+          "destino": "Rodoviária (Centro / Bairro)",
+          "dias": {
+            "terca_quarta_sexta": ["06H50","12H20","17H20"]
+          },
+          "itinerario": "Ribeirão Branco / Lageado – Bairro / Centro"
+        }
       ]
     }
-  }
-  
+  ],
+  "onibus_universitario": [
+    {
+      "linha": "U31",
+      "nome": "Arapongal Faculdade (IDA)",
+      "dias": {
+        "segunda_a_sexta": ["18:45"]
+      }
+    },
+    {
+      "linha": "U32",
+      "nome": "Faculdade Arapongal (VOLTA)",
+      "dias": {
+        "segunda_a_sexta": ["22:40"]
+      },
+      "observacao": "Embarcar FACULDADE/SERROTE via Centro integrar ARAPONGAL"
+    },
+    {
+      "codigo": "U71",
+      "origem": "Faculdade",
+      "destino": "Xangrilá",
+      "horario": "18:45",
+      "observacao": "Ida"
+    },
+    {
+      "codigo": "U52",
+      "origem": "Xangrilá",
+      "destino": "Faculdade / Fundação Bradesco",
+      "horario": "22:40",
+      "observacao": "Volta via Fundação"
+    },
+    {
+      "codigo": "U61",
+      "origem": "Agrochá",
+      "destino": "Faculdade",
+      "horario": "19:00",
+      "observacao": "Ida"
+    },
+    {
+      "codigo": "U62",
+      "origem": "Faculdade",
+      "destino": "Agrochá",
+      "horario": "22:30",
+      "observacao": "Volta (embarcar Faculdade / Serrote via Centro integrar Agrochá)"
+    },
+    {
+      "codigo": "U81",
+      "origem": "Serrote",
+      "destino": "Faculdade",
+      "horario": "18:40",
+      "observacao": "Ida"
+    },
+    {
+      "codigo": "U82",
+      "origem": "Faculdade",
+      "destino": "Serrote / Arapongal",
+      "horario": "22:40",
+      "observacao": "Volta"
+    }
+  ]
+}
