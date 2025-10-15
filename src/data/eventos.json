@@ -1,0 +1,83 @@
+{
+    "eventos": {
+      "fevereiro_marco": [
+        {
+          "nome": "Carnaval",
+          "descricao": "Realizado todos os anos, com muita marchinha e frevo, o evento tem a finalidade de resgatar o Carnaval tradicional na cidade. Em 2013, houve pela primeira vez o desfile de bonecões, inspirado em tradições Paulistas."
+        }
+      ],
+      "maio": [
+        {
+          "nome": "Roda de Violeiros",
+          "descricao": "A Roda de Violeiros “Fermínio Gonçalves de Freitas” teve início em 1971 e ocorre tradicionalmente todos os anos no dia 1º de maio, Dia do Trabalho. Além de valorizar a música raiz, o evento promove concurso entre os violeiros da região."
+        },
+        {
+          "nome": "Virada Cultural Paulista",
+          "descricao": "A cidade de Registro passou a fazer parte oficialmente em 2013, da lista dos municípios que integram a Virada Cultural Paulista, realizado pelo Governo do Estado de São Paulo. É o maior evento simultâneo do interior e litoral paulista, oferecendo uma programação extensa com muita música, dança, teatro, circo e artes visuais aos municípios participantes, formando uma grande festa popular."
+        }
+      ],
+      "junho": [
+        {
+          "nome": "Festa do Sushi",
+          "descricao": "Realizada pela Associação Nipo-Brasileira (BUNKYO) da cidade, com apoio da ACER e Prefeitura Municipal de Registro, o evento gastronômico tem como prato principal o sushi, aliado ao sashimi, ambos da culinária japonesa. Acontece normalmente no mês de junho e além da diversidade gastronômica, apresenta atividades culturais e atrações musicais variadas."
+        }
+      ],
+      "julho": [
+        {
+          "nome": "Festa da Solidariedade",
+          "descricao": "O principal Evento solidário realizado em Registro acontece geralmente na primeira semana de julho no recinto da Expovale. Possui ampla praça de alimentação, com comidas típicas, sorteio de prêmios e outras atrações. É realizada e organizada pelo Fundo Social de Solidariedade e a renda arrecadada é dividida entre as entidades sociais do município, que também participam do evento com barracas na praça de alimentação."
+        }
+      ],
+      "agosto": [
+        {
+          "nome": "Bon Odori",
+          "descricao": "O Bon Odori, realizado em homenagem aos antepassados ocorre no mês de agosto, pois no Japão o Dia de Finados é celebrado neste mês; o Evento conta com a apresentação de danças folclóricas japonesas, alusivas à ocasião. Também são apresentados pratos típicos da culinária nipônica e também regional, além de feira de artesanato."
+        },
+        {
+          "nome": "FEIBANANA – Feira da Bananicultura",
+          "descricao": "A Feira de Agronegócios é realizado pela ABAVAR – Associação dos Bananicultores do Vale do Ribeira, voltada exclusivamente para os bananicultores onde são apresentadas novas tecnologias, através de informações dos mais renomados especialistas na área em apresentações e palestras durante o Evento."
+        }
+      ],
+      "setembro": [
+        {
+          "nome": "SEMPA – Semana da Pátria",
+          "descricao": "Criada em 1997, a Olimpíada é realizada todo ano no mês de setembro, envolvendo estudantes das escolas municipais, estaduais e particulares de Registro. Os alunos competem em diversas modalidades esportivas."
+        },
+        {
+          "nome": "Festa Nordestina",
+          "descricao": "A Festa Nordestina é realizada pela grande comunidade nordestina da cidade, com música ao vivo, comidas típicas e manifestações culturais tradicionais do Nordeste."
+        }
+      ],
+      "outubro": [
+        {
+          "nome": "Torneio de Judô Toraichiro Suzuki",
+          "descricao": "O Torneio é promovido em outubro pela Associação Registrense de Judô (ARJU) e pela 14ª Delegacia da Federação Paulista de Judô, em homenagem a Toraichiro Suzuki."
+        },
+        {
+          "nome": "Exposição Nacional de Orquídeas do Vale do Ribeira",
+          "descricao": "A Exposição é um evento oficial da Coordenadoria das Associaçðes Orquidófilas do Brasil (CAOB) promovido em outubro pela Sociedade Orquidófila do Vale do Ribeira (Orquivale), com grande variedade de orquídeas."
+        }
+      ],
+      "novembro": [
+        {
+          "nome": "Tooro Nagashi",
+          "descricao": "Homenagem aos mortos vítimas do Rio Ribeira de Iguape, realizado sempre no dia de finados, 02 de novembro. Evento religioso com barquinhos iluminados, comidas e danças típicas japonesas."
+        },
+        {
+          "nome": "Baile da Cidade",
+          "descricao": "Tradicional Baile realizado anualmente em comemoração ao Aniversário da Cidade. Realizado pelo Fundo Social de Solidariedade."
+        }
+      ],
+      "dezembro": [
+        {
+          "nome": "Cantata de Natal / Parada de Natal",
+          "descricao": "A Cantata sempre aconteceu na cidade na semana que antecede o Natal, com apresentações de corais, encenações e desfile natalino, organizado pela Secretaria de Cultura."
+        },
+        {
+          "nome": "Réveillon",
+          "descricao": "No Réveillon de Registro, há estrutura para mais de 10 mil pessoas com show pirotécnico e contagem regressiva, além de apresentação de bandas."
+        }
+      ]
+    }
+  }
+  
