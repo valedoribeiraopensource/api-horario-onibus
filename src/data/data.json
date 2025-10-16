@@ -9,7 +9,7 @@
           "origem": "Movep (Centro)",
           "destino": "Arapongal (Bairro)",
           "dias": {
-            "segunda_a_sexta": ["06h55","07h55 (extra)","08h00","08h55","09h55","10h55","11h55","12h55","14h55","16h10","17h15","18h15","19h30","21h40","22h40","23h00"],
+            "segunda_a_sexta": ["06h55","07h55 (extra)","08h00","08h55","09h55","10h55","11h55","12h55","14h55","16h10","17h15","18h15","19h30","21h40","22h40","23h20"],
             "sabado": ["06h55","07h50","07h55","08h55","10h55","11h55","12h55","14h55","16h10","17h15","18h15","19h30","21h40","23h00"],
             "domingo_feriado": ["07h00","08h55","10h55","11h55","14h55","17h00","21h10"]
           },
@@ -355,45 +355,57 @@
       "observacao": "Embarcar FACULDADE/SERROTE via Centro integrar ARAPONGAL"
     },
     {
-      "codigo": "U71",
+      "linha": "U71",
       "origem": "Faculdade",
       "destino": "Xangrilá",
-      "horario": "18:45",
+      "dias": {
+        "segunda_a_sexta": ["18:45"]
+      },
       "observacao": "Ida"
     },
     {
-      "codigo": "U52",
+      "linha": "U52",
       "origem": "Xangrilá",
       "destino": "Faculdade / Fundação Bradesco",
-      "horario": "22:40",
+      "dias": {
+        "segunda_a_sexta": ["22:40"]
+      },
       "observacao": "Volta via Fundação"
     },
     {
-      "codigo": "U61",
+      "linha": "U61",
       "origem": "Agrochá",
       "destino": "Faculdade",
-      "horario": "19:00",
+      "dias": {
+        "segunda_a_sexta": ["19:00"]
+      },
       "observacao": "Ida"
     },
     {
-      "codigo": "U62",
+      "linha": "U62",
       "origem": "Faculdade",
       "destino": "Agrochá",
-      "horario": "22:30",
+      "dias": {
+        "segunda_a_sexta": ["22:30"]
+      },
       "observacao": "Volta (embarcar Faculdade / Serrote via Centro integrar Agrochá)"
     },
     {
-      "codigo": "U81",
+      "linha": "U81",
       "origem": "Serrote",
       "destino": "Faculdade",
-      "horario": "18:40",
+      "dias": {
+        "segunda_a_sexta": ["18:40"]
+      },
       "observacao": "Ida"
     },
     {
-      "codigo": "U82",
+      "linha": "U82",
       "origem": "Faculdade",
       "destino": "Serrote / Arapongal",
-      "horario": "22:40",
+      "dias": {
+        "segunda_a_sexta": ["22:40"]
+      },
       "observacao": "Volta"
     }
   ]
