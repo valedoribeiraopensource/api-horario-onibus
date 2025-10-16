@@ -1,6 +1,7 @@
 import express from "express";
 import fs from "fs";
 import path from "path";
+import http from 'http';
 import { fileURLToPath } from "url";
 
 // Corrige __dirname para ES Modules
@@ -11,10 +12,201 @@ const __dirname = path.dirname(__filename);
 const dataPath = path.resolve(__dirname, "../data/data.json");
 
 // Lê o JSON inicial
-const rawData = fs.readFileSync(dataPath, "utf-8");
-const data = JSON.parse(rawData);
+function lerData() {
+  const rawData = fs.readFileSync(dataPath, "utf-8");
+  return JSON.parse(rawData);
+}
 
 const router = express.Router();
+
+
+
+
+
+export function getProximoOnibus({ tipo, codigo, dia = "segunda_a_sexta" }) {
+  const rawData = fs.readFileSync(dataPath, "utf-8");
+  const data = JSON.parse(rawData);
+  let busList;
+  let sentidoEncontrado;
+  let horarios = [];
+
+  if (tipo === "universitario") busList = data.onibus_universitario.linhas;
+  if (tipo === "rural") busList = data.onibus_rural.linhas;
+  if (tipo === "urbano") busList = data.onibus_urbano.linhas;
+
+  if (!busList) return { mensagem: "Tipo inválido" };
+
+  if (tipo === "universitario") {
+    sentidoEncontrado = busList.find(l => l.codigo.toLowerCase() === codigo.toLowerCase());
+    horarios = sentidoEncontrado?.dias?.[dia] || [];
+  } else if (tipo === "rural") {
+    for (const linha of busList) {
+      sentidoEncontrado = linha.sentidos.find(s => s.codigo.toLowerCase() === codigo.toLowerCase());
+      if (sentidoEncontrado) break;
+    }
+    horarios = sentidoEncontrado?.dias?.[dia] || [];
+  } else if (tipo === "urbano") {
+    for (const linha of busList) {
+      if (linha.sentidos) {
+        sentidoEncontrado = linha.sentidos.find(s => s.codigo.toLowerCase() === codigo.toLowerCase());
+        if (sentidoEncontrado) {
+          horarios = sentidoEncontrado.dias?.[dia] || [];
+          break;
+        }
+      }
+    }
+  }
+
+  if (!sentidoEncontrado || horarios.length === 0)
+    return { tipo, codigo, mensagem: "Nenhum horário disponível" };
+
+  const agora = new Date();
+  const horaAtual = agora.getHours();
+  const minutoAtual = agora.getMinutes();
+
+  const proximo = horarios
+    .map(h => {
+      const [hora, minuto] = h.replace(/[Hh]/g, ":").split(":").map(Number);
+      const diff = hora * 60 + minuto - (horaAtual * 60 + minutoAtual);
+      return { horario: h, diff };
+    })
+    .filter(h => h.diff > 0)
+    .sort((a, b) => a.diff - b.diff)[0];
+
+  if (!proximo)
+    return { tipo, codigo, mensagem: "Nenhum ônibus restante hoje" };
+
+  return {
+    tipo,
+    codigo,
+    proximo_horario: proximo.horario,
+    minutos_restantes: proximo.diff
+  };
+}
+
+
+function calcularProximoOnibus(horarios) {
+  const agora = new Date();
+  const horaAtual = agora.getHours();
+  const minutoAtual = agora.getMinutes();
+
+  const proximo = horarios
+    .map((h) => {
+      const cleaned = h.replace(/[Hh]/g, ":").split(/[:\s]/);
+      const hora = parseInt(cleaned[0]);
+      const minuto = parseInt(cleaned[1] || 0);
+      const diff = hora * 60 + minuto - (horaAtual * 60 + minutoAtual);
+      return { horario: h, diff };
+    })
+    .filter((h) => h.diff > 0)
+    .sort((a, b) => a.diff - b.diff)[0];
+
+  return proximo || null;
+}
+
+function buscarSentido(tipo, codigo, dia) {
+  const data = lerData();
+
+  let sentidoEncontrado = null;
+  let horarios = [];
+
+  if (tipo === "universitario") {
+    const bus = data.onibus_universitario.linhas.find(
+      (o) => o.codigo.toLowerCase() === codigo.toLowerCase()
+    );
+    if (bus) {
+      sentidoEncontrado = bus;
+      horarios = bus.dias?.[dia] || [];
+    }
+  } else if (tipo === "rural") {
+    for (const linha of data.onibus_rural.linhas) {
+      sentidoEncontrado = linha.sentidos.find(
+        (s) => s.codigo.toLowerCase() === codigo.toLowerCase()
+      );
+      if (sentidoEncontrado) {
+        horarios = sentidoEncontrado.dias?.[dia] || [];
+        break;
+      }
+    }
+  } else if (tipo === "urbano") {
+    for (const linha of data.onibus_urbano.linhas) {
+      if (linha.sentidos) {
+        sentidoEncontrado = linha.sentidos.find(
+          (s) => s.codigo.toLowerCase() === codigo.toLowerCase()
+        );
+        if (sentidoEncontrado) {
+          horarios = sentidoEncontrado.dias?.[dia] || [];
+          break;
+        }
+      } else if (linha.dias && linha.dias[dia]?.[codigo]) {
+        const diaObj = linha.dias[dia][codigo];
+        sentidoEncontrado = {
+          codigo,
+          origem: diaObj.saida,
+          destino: "Ver itinerário",
+          itinerario: diaObj.itinerario || "",
+        };
+        horarios = diaObj.horarios || [];
+        break;
+      }
+    }
+  }
+
+  return { sentidoEncontrado, horarios };
+}
+
+// =====================
+// ROTAS REST
+// =====================
+// ... Aqui você mantém suas rotas REST atuais
+// urbano, rural, universitario, proximo-onibus, etc
+// =====================
+
+// =====================
+// SOCKET.IO REAL TIME
+// =====================
+export function setupOnibusSocket(io) {
+  io.on("connection", (socket) => {
+    console.log("Cliente conectado ao Socket de ônibus:", socket.id);
+
+    // Espera o cliente enviar os dados do ônibus que quer monitorar
+    socket.on("monitorarOnibus", ({ tipo, codigo, dia = "segunda_a_sexta" }) => {
+      console.log(`Cliente ${socket.id} monitorando ${tipo} ${codigo} dia ${dia}`);
+
+      // Envia imediatamente o próximo ônibus
+      function enviarProximo() {
+        const { sentidoEncontrado, horarios } = buscarSentido(tipo, codigo, dia);
+        if (!sentidoEncontrado || !horarios.length) {
+          socket.emit("proximoOnibus", { mensagem: "Nenhum ônibus restante hoje." });
+          return;
+        }
+        const proximo = calcularProximoOnibus(horarios);
+        if (!proximo) {
+          socket.emit("proximoOnibus", { mensagem: "Nenhum ônibus restante hoje." });
+          return;
+        }
+        socket.emit("proximoOnibus", {
+          codigo: sentidoEncontrado.codigo,
+          origem: sentidoEncontrado.origem,
+          destino: sentidoEncontrado.destino,
+          proximo_horario: proximo.horario,
+          minutos_restantes: proximo.diff,
+          itinerario: sentidoEncontrado.itinerario || "",
+        });
+      }
+
+      // Envia de 30 em 30 segundos
+      enviarProximo();
+      const interval = setInterval(enviarProximo, 30000);
+
+      // Limpar intervalo quando desconectar
+      socket.on("disconnect", () => {
+        clearInterval(interval);
+        console.log("Cliente desconectado:", socket.id);
+      });
+    });
+  });
+}
 
 // ---------------------
 // ÔNIBUS URBANO
@@ -312,6 +504,7 @@ router.get("/proximo-onibus-urbano", (req, res) => {
     res.status(500).json({ erro: "Erro interno ao processar o pedido." });
   }
 });
+
 
 
 export default router;
